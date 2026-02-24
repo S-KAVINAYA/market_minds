@@ -1,14 +1,25 @@
 import streamlit as st
-from api_client import (
-    login_manager_api,
-    signup_manager_api
-)
+import api_client
+
+
+def _get_auth_fn(name):
+    fn = getattr(api_client, name, None)
+    if fn is None:
+        st.error(f"Missing required API function: {name}. Please resolve merge conflicts in frontend/api_client.py.")
+    return fn
+
 
 def login_page():
 
     st.title("Investment Intelligence System")
 
     tab1, tab2 = st.tabs(["Login", "Sign Up"])
+
+    login_manager_api = _get_auth_fn("login_manager_api")
+    signup_manager_api = _get_auth_fn("signup_manager_api")
+
+    if login_manager_api is None or signup_manager_api is None:
+        st.stop()
 
     # LOGIN
     with tab1:
