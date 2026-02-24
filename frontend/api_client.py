@@ -338,3 +338,27 @@ def ai_explain_risk_asset_timeseries(df, risk_level):
 
 def recommendation_timestamp():
     return datetime.utcnow().strftime("%Y-%m-%d %H:%M UTC")
+
+
+__all__ = [
+    "login_manager_api",
+    "signup_manager_api",
+    "load_managers",
+    "save_managers",
+    "fetch_clients",
+    "fetch_clients_cached",
+    "fetch_client_trend",
+    "fetch_stock_universe",
+    "fetch_stock_trend",
+    "fetch_customer_comparison_trend",
+    "fetch_client_asset_timeseries",
+    "fetch_risk_level_asset_timeseries",
+    "build_risk_dashboard_metrics",
+    "group_clients_by_ticker",
+    "generate_ticker_drop_alerts",
+    "ai_risk_explainability",
+    "ai_stock_recommendation",
+    "forecast_stock_prices",
+    "ai_explain_risk_asset_timeseries",
+    "recommendation_timestamp",
+]
