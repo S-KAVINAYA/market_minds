@@ -1,0 +1,8 @@
+﻿venv/
+**/venv/
+__pycache__/
+**/__pycache__/
+*.pyc
+backend/managers.json
+frontend/managers.json
+frontend/users.json
